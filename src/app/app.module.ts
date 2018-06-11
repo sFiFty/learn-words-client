@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { AddWordsComponent } from './add-words/add-words.component';
@@ -20,6 +21,8 @@ const routes = [
   ],
   imports: [
     BrowserModule,
+    RouterModule,
+    HttpClientModule,
     RouterModule.forRoot(routes)
   ],
   providers: [

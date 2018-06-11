@@ -14,6 +14,8 @@ export class AddWordsComponent implements OnInit {
   }
 
   ngOnInit() {
+    this._wordsService.getAll().subscribe(users => {
+      console.log(users);
+    });
   }
-
 }

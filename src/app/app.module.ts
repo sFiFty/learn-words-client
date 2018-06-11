@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { AddWordsComponent } from './add-words/add-words.component';
 import { HomeComponent } from './home/home.component';
+import { WordsService } from './words.service';
 
 const routes = [
   { path: '', component: HomeComponent },
@@ -21,7 +22,9 @@ const routes = [
     BrowserModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [],
+  providers: [
+    WordsService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -8,7 +8,8 @@ import { AppComponent } from './app.component';
 import { AddWordsComponent } from './add-words/add-words.component';
 import { HomeComponent } from './home/home.component';
 import { WordsService } from './words.service';
-import { MatButtonModule, MatFormFieldModule } from '@angular/material';
+import { MatButtonModule, MatFormFieldModule, MatInputModule } from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 const routes = [
   { path: '', component: HomeComponent },
@@ -27,8 +28,10 @@ const routes = [
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    BrowserAnimationsModule,
     MatFormFieldModule,
     MatButtonModule,
+    MatInputModule,
     RouterModule.forRoot(routes)
   ],
   providers: [

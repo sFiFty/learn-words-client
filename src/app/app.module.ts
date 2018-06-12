@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { AddWordsComponent } from './add-words/add-words.component';
 import { HomeComponent } from './home/home.component';
 import { WordsService } from './words.service';
+import { MatButtonModule, MatFormFieldModule } from '@angular/material';
 
 const routes = [
   { path: '', component: HomeComponent },
@@ -18,7 +19,7 @@ const routes = [
   declarations: [
     AppComponent,
     AddWordsComponent,
-    HomeComponent
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
@@ -26,6 +27,8 @@ const routes = [
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    MatFormFieldModule,
+    MatButtonModule,
     RouterModule.forRoot(routes)
   ],
   providers: [

@@ -17,7 +17,6 @@ export class WordsService {
   }
 
   public addWord = data => {
-    console.log(data);
     return this._http.post('http://localhost:3000/api/Words', data, httpOptions);
   }
 

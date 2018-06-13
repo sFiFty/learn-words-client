@@ -1,0 +1,17 @@
+@import '../../sass/_variables.scss';
+
+.navigation-container {
+  a {
+    display: block;
+    text-decoration: none;
+    color: $black;
+    padding: 10px 0px;
+    font-size: 18px;
+    &.active {
+      text-decoration: underline;
+    }
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

@@ -28,7 +28,7 @@
               }
             ],
             "styles": [
-              "src/sass/styles.scss",
+              "src/sass/index.scss",
               "src/styles.css"
             ],
             "scripts": []

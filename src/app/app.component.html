@@ -1,7 +1,14 @@
 
-<a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
-<a routerLink="add-word" routerLinkActive="active">Add word</a>
 
-<router-outlet>
-</router-outlet>
+<mat-drawer-container class="app-container">
+  <mat-drawer mode="side" opened="true">
+    <a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
+    <a routerLink="add-word" routerLinkActive="active">Add word</a>
+  </mat-drawer>
+  <mat-drawer-content>
+    <router-outlet>
+    </router-outlet>
+  </mat-drawer-content>
+</mat-drawer-container>
+
 

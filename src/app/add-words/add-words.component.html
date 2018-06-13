@@ -1,12 +1,11 @@
 <div>
   <form>
-      <mat-form-field>
-        <input [formControl]="wordControl" matInput>
-      </mat-form-field>
-
-      <mat-form-field>
-        <input [formControl]="translationControl" matInput>
-      </mat-form-field>
-    </form>
-  <button (click)="addWord()">Add word</button>
+    <mat-form-field>
+      <input [formControl]="wordControl" matInput placeholder="Word">
+    </mat-form-field>
+    <mat-form-field>
+      <input [formControl]="translationControl" matInput placeholder="Translation">
+    </mat-form-field>
+  </form>
+  <button mat-raised-button (click)="addWord()" color="primary">Add word</button>
 </div>

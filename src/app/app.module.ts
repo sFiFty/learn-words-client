@@ -10,6 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { WordsService } from './words.service';
 import { MatButtonModule, MatFormFieldModule, MatInputModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSidenavModule } from '@angular/material/sidenav';
 
 const routes = [
   { path: '', component: HomeComponent },
@@ -32,6 +33,7 @@ const routes = [
     MatFormFieldModule,
     MatButtonModule,
     MatInputModule,
+    MatSidenavModule,
     RouterModule.forRoot(routes)
   ],
   providers: [

@@ -20,10 +20,6 @@ export class AddWordsComponent implements OnInit {
   ngOnInit() {
     this.wordControl = new FormControl();
     this.translationControl = new FormControl();
-    this._wordsService.getAll().subscribe(users => {
-      console.log(users);
-    });
-
     this.wordControl.valueChanges.subscribe(value => {
       this.word = value;
     });

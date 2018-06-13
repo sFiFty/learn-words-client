@@ -11,10 +11,13 @@ import { WordsService } from './words.service';
 import { MatButtonModule, MatFormFieldModule, MatInputModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { NavigationComponent } from './navigation/navigation.component';
+import { LearnComponent } from './learn/learn.component';
 
 const routes = [
   { path: '', component: HomeComponent },
-  { path: 'add-word', component: AddWordsComponent },
+  { path: 'add', component: AddWordsComponent },
+  { path: 'learn', component: LearnComponent },
 ];
 
 @NgModule({
@@ -22,6 +25,8 @@ const routes = [
     AppComponent,
     AddWordsComponent,
     HomeComponent,
+    NavigationComponent,
+    LearnComponent,
   ],
   imports: [
     BrowserModule,

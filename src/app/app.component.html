@@ -1,11 +1,11 @@
 
 
 <mat-drawer-container class="app-container">
-  <mat-drawer mode="side" opened="true">
-    <a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
-    <a routerLink="add-word" routerLinkActive="active">Add word</a>
+  <mat-drawer mode="side" opened="true" class="sidebar">
+    <app-navigation>
+    </app-navigation>
   </mat-drawer>
-  <mat-drawer-content>
+  <mat-drawer-content class="content">
     <router-outlet>
     </router-outlet>
   </mat-drawer-content>

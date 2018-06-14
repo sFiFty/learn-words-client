@@ -1,0 +1,6 @@
+.learn-words-list-item {
+  display: flex;
+  .word, .translation {
+    min-width: 300px;
+  }
+}

@@ -3,13 +3,14 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonModule, MatFormFieldModule, MatInputModule } from '@angular/material';
+import { MatListModule } from '@angular/material/list';
 
 import { AppComponent } from './app.component';
 import { AddWordsComponent } from './add-words/add-words.component';
 import { HomeComponent } from './home/home.component';
 import { WordsService } from './words.service';
-import { MatButtonModule, MatFormFieldModule, MatInputModule } from '@angular/material';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { NavigationComponent } from './navigation/navigation.component';
 import { LearnComponent } from './learn/learn.component';
@@ -39,6 +40,7 @@ const routes = [
     MatButtonModule,
     MatInputModule,
     MatSidenavModule,
+    MatListModule,
     RouterModule.forRoot(routes)
   ],
   providers: [

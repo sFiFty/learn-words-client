@@ -1,6 +1,7 @@
-<div>
-  <div *ngFor="let word of words">
-    <span>{{ word.Name }}</span>
-    <span>{{ word.Translation }}</span>
-  </div>
-</div>
+<mat-list>
+  <h3 mat-subheader>Your words</h3>
+  <mat-list-item class="learn-words-list-item" *ngFor="let word of words">
+    <span class="word">{{ word.Name }}</span>
+    <span class="translation">{{ word.Translation }}</span>
+  </mat-list-item>
+ </mat-list>

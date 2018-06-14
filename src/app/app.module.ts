@@ -6,6 +6,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule, MatFormFieldModule, MatInputModule } from '@angular/material';
 import { MatListModule } from '@angular/material/list';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { fas } from '@fortawesome/free-solid-svg-icons';
 
 import { AppComponent } from './app.component';
 import { AddWordsComponent } from './add-words/add-words.component';
@@ -20,6 +23,8 @@ const routes = [
   { path: 'add', component: AddWordsComponent },
   { path: 'learn', component: LearnComponent },
 ];
+
+library.add(fas);
 
 @NgModule({
   declarations: [
@@ -36,6 +41,7 @@ const routes = [
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
+    FontAwesomeModule,
     MatFormFieldModule,
     MatButtonModule,
     MatInputModule,

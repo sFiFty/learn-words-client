@@ -3,5 +3,6 @@
   <mat-list-item class="learn-words-list-item" *ngFor="let word of words">
     <span class="word">{{ word.Name }}</span>
     <span class="translation">{{ word.Translation }}</span>
+    <span><fa-icon [icon]="['fas', 'trash-alt']"></fa-icon></span>
   </mat-list-item>
  </mat-list>

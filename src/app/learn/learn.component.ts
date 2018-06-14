@@ -25,7 +25,7 @@ export class LearnComponent implements OnInit {
 
   deleteWord(id) {
     this._wordsService.deleteWord(id).subscribe(word => {
-      console.log(word);
+      this.words = this.words.filter(w => w.id !== id);
     });
   }
 

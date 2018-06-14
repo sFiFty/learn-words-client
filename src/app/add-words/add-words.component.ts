@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { WordsService } from '../words.service';
 import { FormControl } from '@angular/forms';
+import { Router } from '@angular/router';
+import { WordsService } from '../words.service';
 
 @Component({
   selector: 'app-add-words',
@@ -13,7 +14,7 @@ export class AddWordsComponent implements OnInit {
   private word;
   private translation;
 
-  constructor(private _wordsService: WordsService) {
+  constructor(private _wordsService: WordsService, private _router: Router) {
 
   }
 
@@ -34,7 +35,7 @@ export class AddWordsComponent implements OnInit {
       Name: this.word,
       Translation: this.translation
     }).subscribe(response => {
-      console.log(response);
+      this._router.navigate(['learn']);
     });
   }
 }

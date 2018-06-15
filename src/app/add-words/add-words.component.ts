@@ -14,8 +14,6 @@ export class AddWordsComponent implements OnInit {
   translationControl: FormControl;
   private word;
   private translation;
-  private id;
-
   constructor(private _wordsService: WordsService, private _snackBar: MatSnackBar) {}
 
   ngOnInit() {
@@ -41,10 +39,9 @@ export class AddWordsComponent implements OnInit {
   }
 
   private openSnackBar(message: string) {
-    this._snackBar.open(message, 'Undo', {
-      duration: 5000,
-    }).onAction().subscribe(() => {
-      console.log('called');
+    this._snackBar.open(message, '', {
+      duration: 2000,
+      panelClass: 'success'
     });
   }
 }

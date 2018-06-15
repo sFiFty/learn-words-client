@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { WordsService } from '../words.service';
+import { MatSnackBar } from '@angular/material';
 
 @Component({
   selector: 'app-add-words',
@@ -13,10 +14,9 @@ export class AddWordsComponent implements OnInit {
   translationControl: FormControl;
   private word;
   private translation;
+  private id;
 
-  constructor(private _wordsService: WordsService, private _router: Router) {
-
-  }
+  constructor(private _wordsService: WordsService, private _snackBar: MatSnackBar) {}
 
   ngOnInit() {
     this.wordControl = new FormControl();
@@ -24,7 +24,6 @@ export class AddWordsComponent implements OnInit {
     this.wordControl.valueChanges.subscribe(value => {
       this.word = value;
     });
-
     this.translationControl.valueChanges.subscribe(value => {
       this.translation = value;
     });
@@ -35,7 +34,17 @@ export class AddWordsComponent implements OnInit {
       Name: this.word,
       Translation: this.translation
     }).subscribe(response => {
-      this._router.navigate(['learn']);
+      this.wordControl.setValue('');
+      this.translationControl.setValue('');
+      this.openSnackBar('Word was successfully added');
+    });
+  }
+
+  private openSnackBar(message: string) {
+    this._snackBar.open(message, 'Undo', {
+      duration: 5000,
+    }).onAction().subscribe(() => {
+      console.log('called');
     });
   }
 }

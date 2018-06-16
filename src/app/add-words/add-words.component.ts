@@ -39,6 +39,12 @@ export class AddWordsComponent implements OnInit {
     });
   }
 
+  public testRemoute = () => {
+    this._wordsService.testRemoute().subscribe(data => {
+      console.log(data);
+    })
+  }
+
   private openSnackBar(message: string) {
     this._snackBar.open(message, '', {
       duration: 2000,

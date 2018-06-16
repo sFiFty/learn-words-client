@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { Router } from '@angular/router';
 import { WordsService } from '../words.service';
 import { MatSnackBar } from '@angular/material';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-add-words',
@@ -30,7 +30,8 @@ export class AddWordsComponent implements OnInit {
   public addWord = () => {
     this._wordsService.addWord({
       Name: this.word,
-      Translation: this.translation
+      Translation: this.translation,
+      Date: moment(),
     }).subscribe(response => {
       this.wordControl.setValue('');
       this.translationControl.setValue('');

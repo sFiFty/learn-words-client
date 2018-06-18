@@ -39,9 +39,13 @@ export class AddWordsComponent implements OnInit {
     });
   }
 
+  public getTranslation = () => {
+    this.translate(this.wordControl.value);
+  }
+
   public translate = (text) => {
     this._wordsService.translate(text).subscribe(data => {
-      this.translationControl.setValue('Hello');
+      this.translationControl.setValue(data.translation);
     });
   }
 

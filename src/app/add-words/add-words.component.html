@@ -1,7 +1,7 @@
 <div class="translation-container">
   <div class="translation-box">
     <div class="column">
-      <textarea autocomplete="off" [formControl]="wordControl" placeholder="Word"></textarea>
+      <textarea autocomplete="off" (change)="getTranslation()" [formControl]="wordControl" placeholder="Word"></textarea>
     </div>
     <div class="column">
       <textarea autocomplete="off" [formControl]="translationControl" placeholder="Translation"></textarea>

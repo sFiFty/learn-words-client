@@ -1,11 +1,11 @@
-<div class="translation-box">
-  <form>
-    <mat-form-field appearance="legacy">
-      <textarea autocomplete="off" [formControl]="wordControl" matInput placeholder="Word"></textarea>
-    </mat-form-field>
-    <mat-form-field appearance="legacy">
-      <textarea autocomplete="off" [formControl]="translationControl" matInput placeholder="Translation"></textarea>
-    </mat-form-field>
-  </form>
+<div class="translation-container">
+  <div class="translation-box">
+    <div class="column">
+      <textarea autocomplete="off" [formControl]="wordControl" placeholder="Word"></textarea>
+    </div>
+    <div class="column">
+      <textarea autocomplete="off" [formControl]="translationControl" placeholder="Translation"></textarea>
+    </div>
+  </div>
   <button mat-raised-button (click)="addWord()" color="primary">Add word</button>
 </div>

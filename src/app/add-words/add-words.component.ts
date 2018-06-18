@@ -39,10 +39,10 @@ export class AddWordsComponent implements OnInit {
     });
   }
 
-  public testRemoute = () => {
-    this._wordsService.testRemoute().subscribe(data => {
-      console.log(data);
-    })
+  public translate = (text) => {
+    this._wordsService.translate(text).subscribe(data => {
+      this.translationControl.setValue('Hello');
+    });
   }
 
   private openSnackBar(message: string) {

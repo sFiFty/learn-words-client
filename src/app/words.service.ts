@@ -21,8 +21,10 @@ export class WordsService {
     return this._http.post('http://localhost:3000/api/Words', data, httpOptions);
   }
 
-  public testRemoute = () => {
-    return this._http.get('http://localhost:3000/api/Words/translate');
+  public translate = (text) => {
+    return this._http.post('http://localhost:3000/api/Words/translate', {
+      text: text,
+    });
   }
 
   public deleteWord = id => {

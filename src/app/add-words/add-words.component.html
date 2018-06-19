@@ -1,11 +1,14 @@
 <div class="translation-container">
   <div class="translation-box">
     <div class="column">
-      <textarea autocomplete="off" (change)="getTranslation()" [formControl]="wordControl" placeholder="Word"></textarea>
+      <textarea autocomplete="off" (change)="getTranslation()" [formControl]="wordControl" placeholder="Англійська"></textarea>
+    </div>
+    <div class="icon-container">
+      <fa-icon [icon]="['fas', 'exchange-alt']"></fa-icon>
     </div>
     <div class="column">
-      <textarea autocomplete="off" [formControl]="translationControl" placeholder="Translation"></textarea>
+      <textarea autocomplete="off" [formControl]="translationControl" placeholder="Українська"></textarea>
     </div>
   </div>
-  <button mat-raised-button (click)="addWord()" color="primary">Add word</button>
+  <button mat-raised-button (click)="addWord()" color="primary">Додати пару</button>
 </div>

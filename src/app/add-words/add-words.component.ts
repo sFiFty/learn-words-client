@@ -10,31 +10,31 @@ import * as moment from 'moment';
   styleUrls: ['./add-words.component.scss']
 })
 export class AddWordsComponent implements OnInit {
-  wordControl: FormControl;
-  translationControl: FormControl;
-  private word;
-  private translation;
+  uaControl: FormControl;
+  enControl: FormControl;
+  private ua;
+  private en;
   constructor(private _wordsService: WordsService, private _snackBar: MatSnackBar) {}
 
   ngOnInit() {
-    this.wordControl = new FormControl();
-    this.translationControl = new FormControl();
-    this.wordControl.valueChanges.subscribe(value => {
-      this.word = value;
+    this.uaControl = new FormControl();
+    this.enControl = new FormControl();
+    this.uaControl.valueChanges.subscribe(value => {
+      this.ua = value;
     });
-    this.translationControl.valueChanges.subscribe(value => {
-      this.translation = value;
+    this.enControl.valueChanges.subscribe(value => {
+      this.en = value;
     });
   }
 
   public addWord = () => {
     this._wordsService.addWord({
-      Name: this.word,
-      Translation: this.translation,
+      Ua: this.ua,
+      En: this.en,
       Date: moment(),
     }).subscribe(response => {
-      this.wordControl.setValue('');
-      this.translationControl.setValue('');
+      this.uaControl.setValue('');
+      this.enControl.setValue('');
       this.openSnackBar('Word was successfully added');
     });
   }

@@ -1,14 +1,18 @@
 <div class="translation-container">
   <div class="translation-box">
-    <div class="column">
-      <textarea autocomplete="off" (change)="getTranslation()" [formControl]="uaControl" placeholder="Англійська"></textarea>
+    <div class="language-container">
+      <h1>Мова оригіналу</h1>
+      <mat-button-toggle-group [value]="language" name="Language" aria-label="Language">
+        <mat-button-toggle value="uk">Українська</mat-button-toggle>
+        <mat-button-toggle value="en">Англійська</mat-button-toggle>
+      </mat-button-toggle-group>
     </div>
-    <div class="icon-container">
-      <fa-icon [icon]="['fas', 'exchange-alt']"></fa-icon>
-    </div>
-    <div class="column">
-      <textarea autocomplete="off" [formControl]="enControl" placeholder="Українська"></textarea>
-    </div>
+    <mat-form-field class="inputs-container">
+      <input matInput autocomplete="off" placeholder="Введіть слово або фразу для перекладу" (change)="getTranslation()" [formControl]="textControl" />
+    </mat-form-field>
+    <mat-form-field class="inputs-container">
+      <input matInput autocomplete="off" [formControl]="translationControl" />
+    </mat-form-field>
   </div>
   <button mat-raised-button (click)="addWord()" color="primary">Додати пару</button>
 </div>

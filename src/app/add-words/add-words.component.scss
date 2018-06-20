@@ -6,30 +6,9 @@
   margin: 0 auto;
   .translation-box {
     display: flex;
-    justify-content: space-between;
-    .column {
-      width: 370px;
-      border: 2px solid $primary;
-      textarea {
-        width: 100%;
-        height: 200px;
-        padding: 0;
-        resize: none;
-        border-width: 0;
-        font-size: 18px;
-        padding: 10px 15px;
-        box-sizing: border-box;
-        &:focus {
-          border: none;
-          outline-offset: 0;
-          outline: none;
-        }
-      }
-    }
-    .icon-container {
-      padding-top: 20px;
-      font-size: 24px;
-      color: $primary;
+    flex-direction: column;
+    .language-container {
+      text-align: center;
     }
   }
 }

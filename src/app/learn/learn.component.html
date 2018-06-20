@@ -1,7 +1,7 @@
 <mat-list>
-  <h3 mat-subheader>Your words</h3>
+  <h3 mat-subheader>Ваші пари</h3>
   <mat-list-item class="learn-words-list-item" *ngFor="let word of words">
-    <span class="word">{{ word.Name }}</span>
+    <span class="word">{{ word.Text }}</span>
     <span class="translation">{{ word.Translation }}</span>
     <span class="delete" (click)="deleteWord(word.id)">
       <fa-icon [icon]="['fas', 'trash-alt']"></fa-icon>

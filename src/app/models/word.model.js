@@ -1,7 +1,8 @@
 export class Word {
   id: number;
-  Name: string;
+  Text: string;
   Translation: string;
+  Language: string;
   Date: date;
 }
 

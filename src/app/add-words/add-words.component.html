@@ -1,8 +1,8 @@
 <div class="translation-container">
   <div class="translation-box">
     <div class="language-container">
-      <h1>Мова оригіналу</h1>
-      <mat-button-toggle-group [value]="language" name="Language" aria-label="Language">
+      <h1>Мова перекладу</h1>
+      <mat-button-toggle-group (change)="onChangeLanguage($event.value)" [value]="language" name="Language" aria-label="Language">
         <mat-button-toggle value="uk">Українська</mat-button-toggle>
         <mat-button-toggle value="en">Англійська</mat-button-toggle>
       </mat-button-toggle-group>

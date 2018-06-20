@@ -21,7 +21,7 @@ export class AddWordsComponent implements OnInit {
   ngOnInit() {
     this.textControl = new FormControl();
     this.translationControl = new FormControl();
-    this.language = 'uk';
+    this.language = 'en';
     this.textControl.valueChanges.subscribe(value => {
       this.text = value;
     });
@@ -30,10 +30,13 @@ export class AddWordsComponent implements OnInit {
     });
   }
 
+  public onChangeLanguage = value => this.language = value;
+
   public addWord = () => {
     this._wordsService.addWord({
-      Ua: this.text,
-      En: this.translation,
+      Text: this.text,
+      Translation: this.translation,
+      Language: this.language,
       Date: moment(),
     }).subscribe(response => {
       this.textControl.setValue('');
@@ -45,8 +48,12 @@ export class AddWordsComponent implements OnInit {
   public getTranslation = () => {
     if (!this.textControl.value) {
       this.translationIsShown = false;
-    };
-    this.translate(this.textControl.value);
+      return;
+    }
+    this.translate({
+      text: this.textControl.value,
+      language: this.language,
+    });
   }
 
   public translate = (text) => {

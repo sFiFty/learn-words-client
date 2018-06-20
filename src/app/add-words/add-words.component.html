@@ -9,8 +9,8 @@
     </div>
     <mat-form-field class="inputs-container">
       <input matInput autocomplete="off" placeholder="Введіть слово або фразу для перекладу" [formControl]="textControl" />
-      <button mat-button *ngIf="text" matSuffix mat-icon-button aria-label="Перекласти" (click)="getTranslation()">
-        <fa-icon [icon]="['fas', 'exchange-alt']"></fa-icon>
+      <button title="Натисніть щоб перекласти" mat-button *ngIf="text" matSuffix mat-icon-button aria-label="Перекласти" (click)="getTranslation()">
+        <fa-icon size="lg" [icon]="['fas', 'exchange-alt']"></fa-icon>
       </button>
     </mat-form-field>
     <mat-form-field class="inputs-container" *ngIf="translationIsShown">

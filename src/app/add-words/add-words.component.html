@@ -8,11 +8,14 @@
       </mat-button-toggle-group>
     </div>
     <mat-form-field class="inputs-container">
-      <input matInput autocomplete="off" placeholder="Введіть слово або фразу для перекладу" (change)="getTranslation()" [formControl]="textControl" />
+      <input matInput autocomplete="off" placeholder="Введіть слово або фразу для перекладу" [formControl]="textControl" />
+      <button mat-button *ngIf="text" matSuffix mat-icon-button aria-label="Перекласти" (click)="getTranslation()">
+        <fa-icon [icon]="['fas', 'exchange-alt']"></fa-icon>
+      </button>
     </mat-form-field>
-    <mat-form-field class="inputs-container">
-      <input matInput autocomplete="off" [formControl]="translationControl" />
+    <mat-form-field class="inputs-container" *ngIf="translationIsShown">
+      <input matInput autocomplete="off" placeholder="Ви можете внести зміни до перекладу якщо потрібно" [formControl]="translationControl" />
     </mat-form-field>
   </div>
-  <button mat-raised-button (click)="addWord()" color="primary">Додати пару</button>
+  <button *ngIf="translationIsShown" mat-raised-button (click)="addWord()" color="primary">Додати пару</button>
 </div>

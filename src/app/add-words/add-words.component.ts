@@ -12,9 +12,10 @@ import * as moment from 'moment';
 export class AddWordsComponent implements OnInit {
   textControl: FormControl;
   translationControl: FormControl;
-  private text;
+  public text;
   private translation;
   public language;
+  public translationIsShown = false;
   constructor(private _wordsService: WordsService, private _snackBar: MatSnackBar) {}
 
   ngOnInit() {
@@ -37,16 +38,20 @@ export class AddWordsComponent implements OnInit {
     }).subscribe(response => {
       this.textControl.setValue('');
       this.translationControl.setValue('');
-      this.openSnackBar('Word was successfully added');
+      this.openSnackBar('Пара успішно додана!');
     });
   }
 
   public getTranslation = () => {
+    if (!this.textControl.value) {
+      this.translationIsShown = false;
+    };
     this.translate(this.textControl.value);
   }
 
   public translate = (text) => {
     this._wordsService.translate(text).subscribe(data => {
+      this.translationIsShown = true;
       this.translationControl.setValue(data.translation);
     });
   }

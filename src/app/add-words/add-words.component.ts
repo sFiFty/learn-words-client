@@ -23,6 +23,10 @@ export class AddWordsComponent implements OnInit {
     this.translationControl = new FormControl();
     this.language = 'en';
     this.textControl.valueChanges.subscribe(value => {
+      if (!value) {
+        this.translationControl.setValue('');
+        this.translationIsShown = false;
+      }
       this.text = value;
     });
     this.translationControl.valueChanges.subscribe(value => {
